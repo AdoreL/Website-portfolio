@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+
+
+    <div id="bg-1">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="usr" placeholder="First and Last">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="sel1">Subject:</label>
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <select class="form-control" id="sel1">
+                            <option>Programing</option>
+                            <option>2D/3D Modeling</option>
+                            <option>Unity</option>
+                            <option>Content Creation/Editting</option>
+                            <option>Photography</option>
+                            <option>Video</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="comment">Comment:</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" id="button">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="container-fluid bg-2 text-center">
+        <h3>Currently Situated</h3>
+        <div id="googleMap"></div>
+        <script>
+            function myMap() {
+                var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+                var mapProp = {
+                    center: myCenter,
+                    zoom: 12,
+                    scrollwheel: false,
+                    draggable: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                var marker = new google.maps.Marker({
+                    position: myCenter
+                });
+                marker.setMap(map);
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm1gbUtGuB6lmmfkyzMyrl9O_qiMSIB_k&callback=myMap"></script>
+    </div>

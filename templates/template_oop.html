@@ -1,0 +1,19 @@
+{% extends 'template_parent.html'%}
+
+{% block title%} {{ title }} {% endblock%}
+
+{% block head %}
+    {% include 'head.html'%}
+{% endblock %}
+
+{% block content%}
+    {% include 'navbar.html'%}
+    <div class="container">
+    {% if title == 'Home?' %}
+        {% include 'Home.html?_ijt=qrp2r4krste639qtivsa5duc3i' %}
+    {% endif %}
+    {% if title == 'About' %}
+        {% include 'About.html' %}
+    {% endif %}
+    </div>
+{% endblock %}
